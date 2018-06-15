@@ -13,12 +13,10 @@ const UserSchema = Schema({
     type: String,
     required: true,
     unique: true,
-    lowercase: true,
   },
   password: {
     type: String,
     required: true,
-    minlength: 4, // make this at least 12 in production
   },
 
 });
