@@ -18,6 +18,9 @@
     "url": "https://github.com/LambdaSchool/Sprint-Challenge-Authentication/issues"
   },
   "homepage": "https://github.com/LambdaSchool/Sprint-Challenge-Authentication#readme",
+  "devDependencies": {
+    "nodemon": "^1.17.5"},
+    
   "dependencies": {
     "bcrypt": "^1.0.3",
     "body-parser": "^1.18.2",
