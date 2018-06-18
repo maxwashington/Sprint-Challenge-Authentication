@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
+const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
 const Schema = mongoose.Schema;
 
 const SALT_ROUNDS = 11;
@@ -12,16 +12,15 @@ const UserSchema = Schema({
   username: {
     type: String,
     required: true,
-    unique: true,
+    unique: true
   },
   password: {
     type: String,
-    required: true,
-  },
-
+    required: true
+  }
 });
 
-UserSchema.pre('save', function(next) {
+UserSchema.pre("save", function(next) {
   // https://github.com/kelektiv/node.bcrypt.js#usage
   // Fill this middleware in with the Proper password encrypting, bcrypt.hash()
   // if there is an error here you'll need to handle it by calling next(err);
@@ -46,4 +45,4 @@ UserSchema.methods.checkPassword = function(plainTextPW, callBack) {
   return bcrypt.compare(plainTextPW, this.pw);
 };
 
-module.exports = mongoose.model('User', UserSchema);
+module.exports = mongoose.model("User", UserSchema);
